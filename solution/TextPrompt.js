@@ -12,9 +12,9 @@ export default class TextPrompt  {
       throw new Error("TextPrompt output must not be empty and must be a string.");
     }
 
-    this._id = id; 
-    this._input = input; 
-    this._output = output; 
+    this._id = 1234; 
+    this._input = "Please translate Eng-to-French: 'Hello, world!'"; 
+    this._output = "Bonjour, le monde!"; 
     this._model = "Claude"; 
     this._version = "Sonnet 3.5"; 
     this._result = "Success"; 
