@@ -1,29 +1,46 @@
-import Attachment from "../solution/Attachment.js";
+import TextPrompt from "./TextPrompt.js";
+import Attachment from "./Attachment.js";
 
-export default class MultiModalPrompt {
-  constructor({ inputAttachment, outputAttachment } = {}) {
-    if (!(inputAttachment instanceof Attachment)) {
+export default class MultiModalPrompt extends TextPrompt {
+  constructor({
+    id = 1234,
+    input = "Default input",
+    output = "Default output",
+    model = "DefaultModel",
+    version = "DefaultVersion",
+    result = "DefaultResult",
+    type = "MultiModal",
+    date = new Date(),
+    inputAttachment = null,
+    outputAttachment = null,
+  } = {}) {
+    super({ id, input, output, model, version, result, type, date });
+
+    if (inputAttachment && !(inputAttachment instanceof Attachment)) {
       throw new Error("inputAttachment must be an instance of Attachment.");
     }
-    if (!(outputAttachment instanceof Attachment)) {
+
+    if (outputAttachment && !(outputAttachment instanceof Attachment)) {
       throw new Error("outputAttachment must be an instance of Attachment.");
     }
 
-    // Initialize the attachements array with a spelling error to match the test case
-    this._attachements = [inputAttachment, outputAttachment];
+
+    this._attachments = [inputAttachment, outputAttachment];
   }
 
-  // Getter for attachements (matches the spelling in the test case)
-  get attachements() {
-    return this._attachements;
+  get attachments() {
+    return this._attachments;
   }
 
-  // toString method
   toString() {
-    return `InputAttachment: ${this._attachements[0].toString()}\n` +
-           `OutputAttachment: ${this._attachements[1].toString()}`;
+    const attachmentInfo = this._attachments
+      .map((attachment, index) => (attachment ? `Attachment ${index + 1}: ${attachment.toString()}` : `Attachment ${index + 1}: None`))
+      .join("\n");
+
+    return `${super.toString()}\n${attachmentInfo}`;
   }
 }
+
 
 
 

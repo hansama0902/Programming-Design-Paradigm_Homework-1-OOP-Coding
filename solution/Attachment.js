@@ -9,7 +9,8 @@ export default class Attachment {
     this.type = type;
     this.payload = payload;
   }
+
   toString() {
-    return "Attachment: Type=${this.type}, Payload=${this.payload}";
+    return `Attachment: Type=${this.type}, Payload=${this.payload}`;
   }
 }
