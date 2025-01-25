@@ -1,72 +1,87 @@
-
-export default class TextPrompt  {
-  constructor({ id = 1234, input = "Please translate Eng-to-French: 'Hello, world!'", output = "Bonjour, le monde!" } = {}) {
-
+import PromptInterface from "./PromptInterface.js";
+export default class TextPrompt extends PromptInterface{
+  constructor({
+    id = 1234,
+    input = "Please translate Eng-to-French: 'Hello, world!'", 
+    output = "Bonjour, le monde!",
+    model = "Claude",
+    version = "Sonnet 3.5",
+    result = "Success",
+    type = "Text-to-Text",
+    date = new Date()
+  } = {}) {
     if (!id || typeof id !== "number") {
       throw new Error("TextPrompt ID must be a valid number.");
     }
-    if (!input || typeof input !== "string") {
+    if (!input || typeof input !== "string" || input.trim() === "") {
       throw new Error("TextPrompt input must not be empty and must be a string.");
     }
-    if (!output || typeof output !== "string") {
+    if (!output || typeof output !== "string" || output.trim() === "") {
       throw new Error("TextPrompt output must not be empty and must be a string.");
     }
-
-    this._id = 1234; 
-    this._input = "Please translate Eng-to-French: 'Hello, world!'"; 
-    this._output = "Bonjour, le monde!"; 
-    this._model = "Claude"; 
-    this._version = "Sonnet 3.5"; 
-    this._result = "Success"; 
-    this._type = "Text-to-Text"; 
-    this._date = new Date(); 
+    if (typeof model !== "string" || model.trim() === "") {
+      throw new Error("Model must be a non-empty string.");
+    }
+    if (typeof version !== "string" || version.trim() === "") {
+      throw new Error("Version must be a non-empty string.");
+    }
+    if (typeof result !== "string" || result.trim() === "") {
+      throw new Error("Result must be a non-empty string.");
+    }
+    if (typeof type !== "string" || type.trim() === "") {
+      throw new Error("Type must be a non-empty string.");
+    }
+    if (!(date instanceof Date)) {
+      throw new Error("Date must be a valid Date object.");
+    }
+    super(); 
+    this._id = id;
+    this._input = input;
+    this._output = output;
+    this._model = model;
+    this._version = version;
+    this._result = result;
+    this._type = type;
+    this._date = date;
   }
 
-  // Getter for id
   get id() {
     return this._id;
   }
 
-  // Getter for model
   get model() {
     return this._model;
   }
 
-  // Getter for version
   get version() {
     return this._version;
   }
 
-  // Getter for result
   get result() {
     return this._result;
   }
 
-  // Getter for type
   get type() {
     return this._type;
   }
 
-  // Getter for input
   get input() {
     return this._input;
   }
 
-  // Getter for output
   get output() {
     return this._output;
   }
 
-  // Getter for date
   get date() {
     return this._date;
   }
 
-  // toString method
   toString() {
     return `⭐️ Prompt ${this.id} (${this.date}) ${this.model} ${this.version} - ${this.result}\n` +
            `    Input: ${this.input}\n` +
            `    Output: ${this.output}`;
   }
 }
+
 
