@@ -46,6 +46,41 @@ deletePrompts(indices) {
     }
   }
 ```
+## Usage of GenAI
+
+### Problem
+I implemented the following `addPrompt` method:
+
+```javascript
+addPrompt(promptOpt) {
+    this.prompts.push(new TextPrompt(promptOpt));
+}
+```
+
+However, when running the tests, an **additional empty array (`[]`)** is appearing in the results.
+
+---
+
+### Suggested Solution from ChatGPT 4
+ChatGPT 4 recommended modifying the test file to replace:
+
+```javascript
+expect(manager.prompts).toContain(prompt);
+```
+
+with:
+
+```javascript
+expect(manager.prompts).toContainEqual(prompt);
+```
+
+This approach uses `.toContainEqual` to compare objects based on their values instead of references, which would solve the issue.
+
+---
+
+### Reason for Not Adopting
+Since the suggestion involves **modifying the test file**, I decided not to adopt this approach.  
+
 ## License
 
 This project is licensed under the **MIT License**.
