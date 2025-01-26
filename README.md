@@ -23,8 +23,8 @@ This project is a Node.js application developed for **Programming Design Paradig
 
    ```bash
    npm start
-   ```
-4. **Run tests**
+   ```  
+ 4. **Run tests**
    
   ```bash
    npm test
