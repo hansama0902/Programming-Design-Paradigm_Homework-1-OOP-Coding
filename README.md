@@ -57,11 +57,8 @@ addPrompt(promptOpt) {
 }
 ```
 
-However, when running the tests, an **additional empty array (`[]`)** is appearing in the results.
+However, when running the tests, an **additional empty array (`[]`)** is appearing in the results.  
 
----
-
-### Suggested Solution from ChatGPT 4
 ChatGPT 4 recommended modifying the test file to replace:
 
 ```javascript
