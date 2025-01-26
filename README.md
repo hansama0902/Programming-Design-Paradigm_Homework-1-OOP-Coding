@@ -30,8 +30,8 @@ This project is a Node.js application developed for **Programming Design Paradig
 
 4. **Run tests**
    
-   ```bash
-  npm test
+  ```bash
+   npm test
    ```
 
 ## License
