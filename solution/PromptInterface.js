@@ -12,7 +12,7 @@ export default class PromptInterface {
   }
 
   get result() {
-    throw new Error('Not implemented. e.g. "Success"');
+    throw new Error("Not implemented. e.g. \"Success\"");
   }
 
   get type() {
@@ -31,6 +31,6 @@ export default class PromptInterface {
   }
 
   toString() {
-    throw new Error('Not implemented. e.g. "2025/01/17 2:28PM - Success"');
+    throw new Error("Not implemented. e.g. \"2025/01/17 2:28PM - Success\"");
   }
 }

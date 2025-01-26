@@ -4,12 +4,12 @@ import Attachment from "./Attachment.js";
 export default class MultiModalPrompt extends TextPrompt {
   constructor({
     id = 1234,
-    input = "Default input",
-    output = "Default output",
-    model = "DefaultModel",
-    version = "DefaultVersion",
-    result = "DefaultResult",
-    type = "MultiModal",
+    input = "Please translate Eng-to-French: 'Hello, world!'",
+    output = "Bonjour, le monde!",
+    model = "Claude",
+    version = "Sonnet 3.5",
+    result = "Success",
+    type = "Text-to-Text",
     date = new Date(),
     inputAttachment = null,
     outputAttachment = null,
