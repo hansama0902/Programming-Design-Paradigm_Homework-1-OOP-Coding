@@ -28,7 +28,24 @@ npm start
 ```bash
 npm test
 ```
-
+### Creative addition
+**Deleting multiple prompts from the prompts collection based on an array of indices.**
+```bash
+deletePrompts(indices) {
+    if (!Array.isArray(indices)) {
+      throw new Error("Indices must be an array.");
+    }
+    for (const index of indices) {
+      if (index < 0 || index >= this.prompts.length) {
+        throw new Error(`Index ${index} is out of bounds.`);
+      }
+    }
+    indices.sort((a, b) => b - a);
+    for (const index of indices) {
+      this.deletePrompt(index);
+    }
+  }
+```
 ## License
 
 This project is licensed under the **MIT License**.
