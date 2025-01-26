@@ -24,7 +24,6 @@ export default class MultiModalPrompt extends TextPrompt {
       throw new Error("outputAttachment must be an instance of Attachment.");
     }
 
-
     this._attachments = [inputAttachment, outputAttachment];
   }
 
@@ -33,27 +32,20 @@ export default class MultiModalPrompt extends TextPrompt {
   }
 
   toString() {
-    let attachmentInfo = ""; 
+    let attachmentInfo = "";
 
     for (let index = 0; index < this._attachments.length; index++) {
       const attachment = this._attachments[index];
-  
+
       if (attachment) {
         attachmentInfo += `Attachment ${index + 1}: ${attachment.toString()}\n`;
       } else {
         attachmentInfo += `Attachment ${index + 1}: None\n`;
       }
     }
-  
+
     attachmentInfo = attachmentInfo.trim();
-  
+
     return `${super.toString()}\n${attachmentInfo}`;
   }
-  
 }
-
-
-
-
-
-  

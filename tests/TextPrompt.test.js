@@ -13,7 +13,9 @@ describe("TextPrompt", () => {
     expect(prompt.version).toBe("Sonnet 3.5");
     expect(prompt.result).toBe("Success");
     expect(prompt.type).toBe("Text-to-Text");
-    expect(prompt.input).toBe("Please translate Eng-to-French: 'Hello, world!'");
+    expect(prompt.input).toBe(
+      "Please translate Eng-to-French: 'Hello, world!'",
+    );
     expect(prompt.output).toBe("Bonjour, le monde!");
   });
 
@@ -31,7 +33,9 @@ describe("TextPrompt", () => {
     expect(prompt.model).toBe("Claude");
     expect(prompt.version).toBe("Sonnet 3.5");
     expect(prompt.type).toBe("Text-to-Text");
-    expect(prompt.input).toBe("Please translate Eng-to-French: 'Hello, world!'");
+    expect(prompt.input).toBe(
+      "Please translate Eng-to-French: 'Hello, world!'",
+    );
     expect(prompt.output).toBe("Bonjour, le monde!");
   });
 });

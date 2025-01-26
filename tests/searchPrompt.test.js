@@ -9,7 +9,9 @@ describe("PromptManager", () => {
 
   test("should add a prompt to the manager", () => {
     manager.addPrompt("Translate this text into French: 'Hello'");
-    expect(manager.listPrompts()).toContain("Translate this text into French: 'Hello'");
+    expect(manager.listPrompts()).toContain(
+      "Translate this text into French: 'Hello'",
+    );
   });
 
   test("should delete a prompt by index", () => {

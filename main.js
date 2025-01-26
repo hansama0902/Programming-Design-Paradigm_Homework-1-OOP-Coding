@@ -12,7 +12,7 @@ myPromptManager.addPrompt(
     id: ++idCounter,
     input: "Write a PromptManager",
     output: "As a large language model, I can write a PromptManager class.",
-  })
+  }),
 );
 
 myPromptManager.addPrompt(
@@ -20,7 +20,7 @@ myPromptManager.addPrompt(
     id: ++idCounter,
     input: "Is it working?",
     output: "As a large language model, I can write a PromptManager class.",
-  })
+  }),
 );
 
 myPromptManager.addPrompt(
@@ -36,7 +36,7 @@ myPromptManager.addPrompt(
       type: "output",
       payload: "./outFile.png",
     }),
-  })
+  }),
 );
 
 for (let p of myPromptManager) {

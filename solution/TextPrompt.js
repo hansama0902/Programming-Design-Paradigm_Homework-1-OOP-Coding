@@ -1,23 +1,27 @@
 import PromptInterface from "./PromptInterface.js";
-export default class TextPrompt extends PromptInterface{
+export default class TextPrompt extends PromptInterface {
   constructor({
     id = 1234,
-    input = "Please translate Eng-to-French: 'Hello, world!'", 
+    input = "Please translate Eng-to-French: 'Hello, world!'",
     output = "Bonjour, le monde!",
     model = "Claude",
     version = "Sonnet 3.5",
     result = "Success",
     type = "Text-to-Text",
-    date = new Date()
+    date = new Date(),
   } = {}) {
     if (!id || typeof id !== "number") {
       throw new Error("TextPrompt ID must be a valid number.");
     }
     if (!input || typeof input !== "string" || input.trim() === "") {
-      throw new Error("TextPrompt input must not be empty and must be a string.");
+      throw new Error(
+        "TextPrompt input must not be empty and must be a string.",
+      );
     }
     if (!output || typeof output !== "string" || output.trim() === "") {
-      throw new Error("TextPrompt output must not be empty and must be a string.");
+      throw new Error(
+        "TextPrompt output must not be empty and must be a string.",
+      );
     }
     if (typeof model !== "string" || model.trim() === "") {
       throw new Error("Model must be a non-empty string.");
@@ -34,7 +38,7 @@ export default class TextPrompt extends PromptInterface{
     if (!(date instanceof Date)) {
       throw new Error("Date must be a valid Date object.");
     }
-    super(); 
+    super();
     this._id = id;
     this._input = input;
     this._output = output;
@@ -78,10 +82,10 @@ export default class TextPrompt extends PromptInterface{
   }
 
   toString() {
-    return `⭐️ Prompt ${this.id} (${this.date}) ${this.model} ${this.version} - ${this.result}\n` +
-           `    Input: ${this.input}\n` +
-           `    Output: ${this.output}`;
+    return (
+      `⭐️ Prompt ${this.id} (${this.date}) ${this.model} ${this.version} - ${this.result}\n` +
+      `    Input: ${this.input}\n` +
+      `    Output: ${this.output}`
+    );
   }
 }
-
-

@@ -1,8 +1,8 @@
 // import TextPrompt from "./TextPrompt.js";
 
 export default class PromptManager {
-  prompts = []; 
-  
+  prompts = [];
+
   addPrompt(promptOpt) {
     this.prompts.push(promptOpt);
   }
@@ -10,7 +10,7 @@ export default class PromptManager {
   searchPrompt(keyword) {
     const result = [];
     for (const prompt of this.prompts) {
-      if(prompt.match(keyword)) {
+      if (prompt.match(keyword)) {
         result.push(prompt);
       }
     }
@@ -20,7 +20,7 @@ export default class PromptManager {
     if (index < 0 || index >= this.prompts.length) {
       throw new Error("Index out of bounds.");
     }
-    this.prompts.splice(index, 1); 
+    this.prompts.splice(index, 1);
   }
   // Creative addition
   deletePrompts(indices) {
@@ -45,13 +45,13 @@ export default class PromptManager {
     const prompts = this.prompts;
 
     return {
-      next(){
+      next() {
         if (index < prompts.length) {
-          return { value: prompts [index++], done: false };
+          return { value: prompts[index++], done: false };
         } else {
           return { done: true };
         }
-      }
+      },
     };
   }
   filterPrompts(filterCallback) {
@@ -61,4 +61,3 @@ export default class PromptManager {
     return this.prompts.filter(filterCallback);
   }
 }
-  
