@@ -12,7 +12,7 @@ describe("PromptManager", () => {
   });
 
   test("deletePrompts should remove prompts at specified indices", () => {
-    manager.deletePrompts([1, 3]); // 删除索引 1 和 3 的 Prompts
+    manager.deletePrompts([1, 3]); 
     expect(manager.listPrompts()).toEqual(["Prompt 1", "Prompt 3"]);
   });
 
@@ -22,7 +22,7 @@ describe("PromptManager", () => {
   });
 
   test("deletePrompts should handle empty index list", () => {
-    manager.deletePrompts([]); // 空数组，应该不改变 prompts
+    manager.deletePrompts([]); //
     expect(manager.listPrompts()).toEqual(["Prompt 1", "Prompt 2", "Prompt 3", "Prompt 4"]);
   });
 

@@ -33,12 +33,23 @@ export default class MultiModalPrompt extends TextPrompt {
   }
 
   toString() {
-    const attachmentInfo = this._attachments
-      .map((attachment, index) => (attachment ? `Attachment ${index + 1}: ${attachment.toString()}` : `Attachment ${index + 1}: None`))
-      .join("\n");
+    let attachmentInfo = ""; 
 
+    for (let index = 0; index < this._attachments.length; index++) {
+      const attachment = this._attachments[index];
+  
+      if (attachment) {
+        attachmentInfo += `Attachment ${index + 1}: ${attachment.toString()}\n`;
+      } else {
+        attachmentInfo += `Attachment ${index + 1}: None\n`;
+      }
+    }
+  
+    attachmentInfo = attachmentInfo.trim();
+  
     return `${super.toString()}\n${attachmentInfo}`;
   }
+  
 }
 
 
