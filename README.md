@@ -9,26 +9,25 @@ This project is a Node.js application developed for **Programming Design Paradig
 
 
 ### Steps to Run the Project Locally
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd Programming-Design-Paradigm_Homework-1-OOP-Coding
-   ```
-2. **Install dependencies**
 
-   ```bash
-   npm install
-   ```
-3. **Run the project:**
 
-   ```bash
-   npm start
-   ```  
- 4. **Run tests**
-   
-  ```bash
-   npm test
-   ```
+# 1. Clone the repository
+```bash
+git clone <repository-url>
+cd Programming-Design-Paradigm_Homework-1-OOP-Coding
+```
+# 2. Install dependencies
+```bash
+npm install
+```
+# 3. Run the project
+```bash
+npm start
+```
+# 4. Run tests
+```bash
+npm test
+```
 
 ## License
 
